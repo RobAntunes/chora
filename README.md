@@ -266,42 +266,6 @@ arena {
 - Memory safety maintained through arena system
 - Natural many-to-many, one-to-many relationships
 
-## Advanced Features
-
-### Temporal Memory
-
-```rust
-// Memory that expires after a time period
-temporal_arena(5.minutes) {
-    let sensitive_data = load_secrets()
-    process_authentication(sensitive_data)
-    
-    // Data guaranteed to be cleared after 5 minutes
-    // even if process is still running
-}
-```
-
-- Time-based memory management
-- Automatic cleanup of sensitive data
-- Safety guarantees with time constraints
-
-### Emergent Behavior
-
-```rust
-// Simple capabilities
-entity + Movable
-entity + Collidable
-entity + Gravity
-
-// Runtime recognizes capability combination and adds emergent behaviors
-entity.bounce()  // Automatically available due to the combination
-entity.fall_with_physics()  // Emerges from Movable + Gravity
-```
-
-- Complex behaviors emerge from capability combinations
-- Runtime detection of synergistic capabilities
-- Simplified programming model
-
 ### Distributed Capability Negotiation
 
 ```rust
